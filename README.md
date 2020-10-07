@@ -42,7 +42,6 @@ The function `audit.audit_table` takes the following arguments:
 | `target_table`    | Table name, schema qualified if not on search_path |
 | `audit_rows`      | Record each row change, or only audit at a statement level |
 | `audit_query_text` | Record the text of the client query that triggered the audit event? |
-| `ignored_cols`  | Columns to exclude from update diffs, ignore updates that change only ignored cols. |
 
 ### Examples
 
@@ -56,10 +55,4 @@ Log changes for every row but don't log the sql statement
 
 ```sql
 select audit.audit_table('author', true, false);
-```
-
-Log changes for every row, log the sql statement, but don't log the data of the columns `email` and `phone_number`
-
-```sql
-select audit.audit_table('author', true, true, '{email,phone_number}');
 ```
