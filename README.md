@@ -1,5 +1,7 @@
 A simple, customisable table audit system for PostgreSQL implemented using triggers.
 
+This is modified from https://github.com/hasura/audit-trigger, remove unsupported operator that introduced in Postgres 10 in order to running in Postgres 9.
+
 This is based off https://github.com/2ndQuadrant/audit-trigger with the following changes
 
 1. The row data is stored in `jsonb`.
